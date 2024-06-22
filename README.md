@@ -18,6 +18,11 @@ The project followed a data-driven approach:
 2. **Data Processing and Analysis:**
     * Collected data underwent cleaning and processing to ensure its usability for modeling.
     * Exploratory data analysis (EDA) was conducted to discover patterns and relationships within the data.
+    * Build Dashboard to visualize with Power BI
+   ![Build Dashboard with PowerBI](https://github.com/congthinh2132/Analyze_and_Predict_used_laptop_price/assets/166091317/99b4b49e-4548-4a19-8d36-940e77c8cdb5)
+
+Replace `path/to/your/image.png` with the actual file path of the image relative to your README.md file.)  ```
+
 
 3. **Model Development:**
     * Several machine learning models were developed to predict laptop prices, including:
@@ -31,12 +36,3 @@ The project followed a data-driven approach:
 * Data Manipulation & Analysis: Pandas, NumPy
 * Machine Learning: Scikit-learn
 * Data Visualization: Matplotlib
-
-### Project Structure
-project/
-├── data/
-│   ├── raw/ (Folder containing raw scraped data)
-│   └── processed/ (Folder containing cleaned and processed data)
-└── notebooks/
-├── EDA_and_Model.ipynb (Jupyter notebook for exploratory data analysis and model buiding)
-└── CrawedData.ipynb (Jupyter notebook for data crawling)
