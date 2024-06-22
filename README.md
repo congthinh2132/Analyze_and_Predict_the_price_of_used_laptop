@@ -1,6 +1,5 @@
 # Analyze and Predict the price of used laptop
 
-Markdown
 ## Used Laptop Price Prediction Project
 
 This project explores the factors influencing used laptop prices on a commercial marketplace.
