@@ -1,8 +1,16 @@
-# Analyze and Predict the price of used laptop
+# [PYTHON] Explore Used Laptop Price Data Collected from an E-commerce Website
 
-## Used Laptop Price Prediction Project
 
-This project explores the factors influencing used laptop prices on a commercial marketplace.
+## Introduction:
+This project contains data i was crawled from the website neweeg, thats one of the most famous e-commerce website selling the used laptop. I will explore using Python on google colab.
+
+## II. Requirement 
+* Jupiter Notebook: Google Colab
+* Programming Language: Python
+* Data Manipulation & Analysis: Pandas, NumPy
+* Machine Learning: Scikit-learn
+* Data Visualization: Matplotlib
+
 
 ### Objective
 
@@ -30,9 +38,4 @@ Replace `path/to/your/image.png` with the actual file path of the image relative
         * Support Vector Machine (SVM)
         * Random Forest Regression
 
-### Technologies
 
-* Programming Language: Python
-* Data Manipulation & Analysis: Pandas, NumPy
-* Machine Learning: Scikit-learn
-* Data Visualization: Matplotlib
