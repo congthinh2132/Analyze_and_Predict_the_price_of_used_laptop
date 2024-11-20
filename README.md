@@ -41,7 +41,7 @@ This project utilizes data that I crawled from [Newegg](https://www.newegg.com/)
 * Web scraping was used to gather data from a website. This data encompasses both structured (tabular) and unstructured formats.
 * Everyone can download the cleaned dataset [here](https://github.com/congthinh2132/Analyze_and_Predict_the_price_of_used_laptop/blob/main/cleaned_dataset.csv).
 
-## IV. Process
+## IV. Process:
 
 The project followed a data-driven approach:
 1. **Data Collection:**
@@ -59,7 +59,7 @@ The source code for the data collection process can be found [here](https://gith
    * For "Weight" and "CPU model," remove rows with missing values.
 -> Verify that no columns contain missing values after handling.
 
-* **Data Preprocessing**:
+* **Data Preprocessing and Feature Engineering**:
   * "Price":
       * Use the IQR (Interquartile Range) method to identify and remove outliers in the "Price" column.
       * Calculate the lower and upper bounds using IQR.
@@ -81,13 +81,54 @@ The source code for the data collection process can be found [here](https://gith
 
 
 3. **Model Development:**
-    * Several machine learning models were developed to predict laptop prices, including:
-        * Linear Regression
-        * Support Vector Machine (SVM)
-        * Random Forest Regression
-     
-## V. Insights:
+* Select Input and Output Variables: Choose the input variables ("features") and output variable ("target") from the dataset.
+* Split the Data: Use the train_test_split function to split the data into training (X_train, y_train) and testing (X_test, y_test) sets with an 80-20% ratio.
+* Build Preprocessing Pipeline: Identify numerical features ("numeric_features") and categorical features ("categorical_features").
+* Use ColumnTransformer to apply preprocessing steps such as normalizing numerical features and encoding categorical features.
+* Build the Model: Select the RandomForestRegressor model with predefined hyperparameters.
+* Create the Model Pipeline: Combine the preprocessing steps and the regression model into a single pipeline.
+* Train the Model: Train the model using the training data (X_train, y_train) through the established pipeline.
+   
+## V. Visualizations and Insights:
+**Average Price by Laptop Brand**: The bar chart are used to compare the pricing trends among brands.
+![image](https://github.com/user-attachments/assets/d854ef71-7add-4cdc-b1ed-a9a52ada8dcd)
+**Observations**: The distribution of laptop prices by brand shows significant variation, with premium brands like Razer having much higher average prices compared to budget brands or small brands.
 
-## Recommendations
+**Average Price by 'Backlit Keyboard', 'Thunderbolt', and 'Card Reader' options**: The bar charts highlight pricing trends between laptops with and without these features.
+![image](https://github.com/user-attachments/assets/8ba40cdc-2005-420e-90a7-3334d460f0ed)
+**Observations**: For the variables 'Backlit Keyboard', 'Thunderbolt', and 'Card Reader', the chart illustrated that products with these features tend to have a higher average price compared to those without. This is because these features are often additional options for laptops, and some of them are typically found only in premium versions.
+
+**Average Price by 'CPU series' and 'GPU brand'**: The bar charts illustrate the price differences across various CPU series and GPU brands
+![image](https://github.com/user-attachments/assets/6bf05156-75df-4fec-97a1-19170ca7fe03)
+![image](https://github.com/user-attachments/assets/7719a70b-9373-4f78-b789-1d820d91320a)
+**Observations**: The 'CPU series' and 'GPU brand' positively influence the 'price' of laptops, as higher-performing CPUs and GPUs typically lead to higher prices. The same trend applies to RAM and storage—laptops with larger capacities generally cost more.
+
+**Title**: The heatmap shows the correlation between feature varibles and target varible.
+![image](https://github.com/user-attachments/assets/298c47f4-ee51-41a4-bb20-64faefd70975)
+**Observations**: The investigation into the relationships among laptop features reveals fascinating connections, with Price taking center stage.
+* Price and Screen Size are the star duo, consistently linked in high-end laptops, where larger screens command higher prices.
+* Memory and Storage work as a reliable team, boosting performance and contributing to higher prices in tandem.
+* Price and PPI appear to clash, with higher PPI often found in more affordable laptops, suggesting an inverse relationship between affordability and display quality.
+* Backlit Keyboard and Touchscreen form a modern alliance, commonly seen in stylish, premium devices, which naturally come with higher price tags.
+* Card Reader plays the enigmatic role, lightly influencing many features but not significantly affecting the price.
+* Thunderbolt, exclusive and powerful, prefers its niche, usually associated with higher-priced laptops.
+
+## VI. Conclusions:
+Comparing base on the metrics we can see that Random Forest Regression (RFR) model shows the best performance with an R² score of 0.81, outperforming the other models. This indicates that RFR better captures the relationships between independent and dependent variables in this problem.
+|Model	                  |R2	 |MAE	  |RMSE   |
+|-------------------------|----|------|-------|
+|Linear Regression	      |0.63|290.52|398.94 |
+|SVR	                    |0.62|266.47|402.59 |
+|Random Forest Regressor	|0.73|231.45|338.97 |
+
+However, the model still has limitations, as the prediction errors (MAE and RMSE) remain relatively high.
+The model's accuracy could be further improved by:
+* Using more complex machine learning models.
+* Collecting additional data to enhance feature richness and diversity.
+
+In this project, we explored the factors influencing laptop prices through data analysis, preprocessing, and machine learning modeling. Key insights include:
+* Feature Analysis: Variables like 'Brand', 'CPU series', 'GPU brand', 'RAM', and 'Storage' have a significant impact on price. Premium features like 'Backlit Keyboard', 'Thunderbolt', and 'Card Reader' also contribute to higher prices.
+* Challenges and Recommendations: The dataset's limitations more complex models could be explored, and additional data could be collected for better feature diversity.
+Overall, the project highlights the value of data-driven insights for understanding the laptop market and predicting prices accurately, offering a foundation for future research and application.
 
 
