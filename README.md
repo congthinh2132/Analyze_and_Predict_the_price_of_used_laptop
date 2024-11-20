@@ -60,29 +60,27 @@ The source code for the data collection process can be found [here](https://gith
 -> Verify that no columns contain missing values after handling.
 
 * **Data Preprocessing**:
-   * Price:
+  * "Price":
       * Use the IQR (Interquartile Range) method to identify and remove outliers in the "Price" column.
       * Calculate the lower and upper bounds using IQR.
       * Create a new DataFrame that only contains rows where "Price" is within the specified range, improving model performance by ensuring a more uniform distribution.
-   
 ![image](https://github.com/user-attachments/assets/41653e92-e189-48d6-b956-91db9db338e2)
-
-   * Backlit Keyboard, Thunderbolt, Card Reader, Touchscreen:
+  * "Backlit Keyboard", "Thunderbolt", "Card Reader", "Touchscreen":
       Group values into two categories: "yes" and "no" to simplify the variable, as different sellers may use different terms, and missing values are often left blank.
       Replace "yes" with 1 and "no" with 0 for these columns.
-   * Resolution:
+  * "Resolution":
       Split "Resolution" into width and height.
       Convert the data type to integer.
       Calculate PPI (Pixels Per Inch) using the formula:
       PPI = √(width² + height²) / screen size.
       Add the new "ppi" column to the dataset.
-   * CPU and GPU:
+  * "CPU" and "GPU":
       Identify the list of CPU and GPU types.
       Create new columns, "CPU_series" from "CPU type" and "GPU_brand" from "GPU."
       Categorize values into groups such as Intel Core, AMD Ryzen, NVIDIA, AMD, or Other for items not listed.
 
 
-4. **Model Development:**
+3. **Model Development:**
     * Several machine learning models were developed to predict laptop prices, including:
         * Linear Regression
         * Support Vector Machine (SVM)
